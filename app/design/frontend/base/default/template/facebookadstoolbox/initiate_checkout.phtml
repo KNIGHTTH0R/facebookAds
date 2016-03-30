@@ -1,0 +1,13 @@
+<script>
+  fbq('track', 'InitiateCheckout', {
+    source: 'magento',
+    content_type: "<?php echo $this->getContentType() ?>", 
+    content_ids: [<?php echo $this->getContentIDs() ?>]
+    <?php if ($this->getValue() && $this->getCurrency()) { ?>
+      , value: <?php echo $this->getValue() ?>
+    <?php } ?>
+    <?php if ($this->getValue() && $this->getCurrency()) { ?>
+      , currency: "<?php echo $this->getCurrency() ?>"
+    <?php } ?>
+  });
+</script>

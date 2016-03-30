@@ -1,0 +1,19 @@
+<script>
+  fbq('track', 'ViewContent', {
+    source: 'magento',
+    content_type: "<?php echo $this->getContentType() ?>", 
+    content_ids: [<?php echo $this->getContentIDs() ?>]
+    <?php if ($this->getContentName()) { ?>
+      , content_name: "<?php echo $this->getContentName() ?>"
+    <?php } ?>
+    <?php if ($this->getContentCategory()) { ?>
+      , content_category: "<?php echo $this->getContentCategory() ?>"
+    <?php } ?>
+    <?php if ($this->getValue() && $this->getCurrency()) { ?>
+      , value: <?php echo $this->getValue() ?>
+    <?php } ?>
+    <?php if ($this->getValue() && $this->getCurrency()) { ?>
+      , currency: "<?php echo $this->getCurrency() ?>"
+    <?php } ?>
+  });
+</script>
